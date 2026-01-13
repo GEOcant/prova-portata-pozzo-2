@@ -88,7 +88,8 @@ def run_analysis(Q_vals, s_vals):
     ax1.set_ylabel("s (m)")
     ax1.grid(True)
     ax1.legend()
-
+    ax1.invert_yaxis()
+    
     # 2) s/Q vs Q
     s_spec = s / Q
     coeff_sQ = np.polyfit(Q, s_spec, 1)
@@ -117,7 +118,8 @@ def run_analysis(Q_vals, s_vals):
     ax3.set_ylabel("s (m)")
     ax3.grid(True)
     ax3.legend()
-
+    ax3.invert_yaxis()
+    
     results = {
         "B": B,
         "C": C,
@@ -213,3 +215,4 @@ if st.button("Calcola"):
 
     except Exception as e:
         st.error(f"Errore nel calcolo: {e}")
+
